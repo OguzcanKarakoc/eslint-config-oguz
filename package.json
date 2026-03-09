@@ -13,7 +13,7 @@
     "release:ci": "release-it --ci"
   },
   "keywords": [
-    "eslint-config-oguz"
+    "@okarakoc/eslint-config"
   ],
   "author": "",
   "license": "ISC",
