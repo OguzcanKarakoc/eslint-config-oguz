@@ -3,7 +3,11 @@
   "version": "1.0.2",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,12 +22,15 @@
   "author": "",
   "license": "ISC",
   "exports": {
-    "./src": "./dist/index.js",
-    "./src/configs/base": "./dist/base.js",
-    "./src/configs/react": "./dist/react.js",
-    "./src/configs/vue": "./dist/vue.js",
-    "./src/configs/next": "./dist/next.js",
-    "./src/configs/nuxt": "./dist/nuxt.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./configs/base": "./dist/configs/base.js",
+    "./configs/typescript": "./dist/configs/typescript.js",
+    "./configs/react": "./dist/configs/react.js",
+    "./configs/vue": "./dist/configs/vue.js",
+    "./configs/next": "./dist/configs/next.js"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
