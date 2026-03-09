@@ -13,6 +13,12 @@ const nextConfig= defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    extends: [
+      "airbnb",
+      "airbnb/hooks"
+    ]
+  }
 ])
 
 export default nextConfig

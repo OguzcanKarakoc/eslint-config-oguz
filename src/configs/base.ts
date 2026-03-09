@@ -20,7 +20,7 @@ const base = defineConfig([
       "no-console": "warn",
       "no-debugger": "error"
     }
-  }
+  },
 ])
 
 export default base
