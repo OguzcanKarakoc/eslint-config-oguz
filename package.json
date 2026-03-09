@@ -19,11 +19,11 @@
   "license": "ISC",
   "exports": {
     ".": "./dist/index.js",
-    "./base": "./dist/base.js",
-    "./react": "./dist/react.js",
-    "./vue": "./dist/vue.js",
-    "./next": "./dist/next.js",
-    "./nuxt": "./dist/nuxt.js"
+    "./src/configs/base": "./dist/base.js",
+    "./src/configs/react": "./dist/react.js",
+    "./src/configs/vue": "./dist/vue.js",
+    "./src/configs/next": "./dist/next.js",
+    "./src/configs/nuxt": "./dist/nuxt.js"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
