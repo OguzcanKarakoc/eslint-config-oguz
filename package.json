@@ -22,15 +22,14 @@
   "author": "",
   "license": "ISC",
   "exports": {
-    "./src": {
+    ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./src/base": "./dist/configs/base.js",
-    "./src/typescript": "./dist/configs/typescript.js",
-    "./src/react": "./dist/configs/react.js",
-    "./src/vue": "./dist/configs/vue.js",
-    "./src/next": "./dist/configs/next.js"
+    "./base": "./dist/configs/base.js",
+    "./react": "./dist/configs/react.js",
+    "./vue": "./dist/configs/vue.js",
+    "./next": "./dist/configs/next.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
