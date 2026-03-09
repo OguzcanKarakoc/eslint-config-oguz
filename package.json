@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "exports": {
-    ".": "./dist/index.js",
+    "./src": "./dist/index.js",
     "./src/configs/base": "./dist/base.js",
     "./src/configs/react": "./dist/react.js",
     "./src/configs/vue": "./dist/vue.js",
