@@ -1,0 +1,45 @@
+{
+  "name": "eslint-config-oguz",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "release": "release-it",
+    "release:ci": "release-it --ci"
+  },
+  "keywords": [
+    "eslint-config-oguz"
+  ],
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    ".": "./dist/index.js",
+    "./base": "./dist/base.js",
+    "./react": "./dist/react.js",
+    "./vue": "./dist/vue.js",
+    "./next": "./dist/next.js",
+    "./nuxt": "./dist/nuxt.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.3.5",
+    "eslint": "^10.0.3",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-vue": "^10.8.0",
+    "release-it": "^19.2.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  },
+  "peerDependencies": {
+    "@eslint/js": "^10.0.0",
+    "eslint": "^10.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-vue": "^10.0.0",
+    "typescript-eslint": "^8"
+  }
+}
