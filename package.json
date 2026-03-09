@@ -13,8 +13,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "release": "release-it",
-    "release:ci": "release-it --ci"
+    "release": "tsc && release-it",
+    "release:ci": "tsc && release-it --ci"
   },
   "keywords": [
     "@okarakoc/eslint-config"
