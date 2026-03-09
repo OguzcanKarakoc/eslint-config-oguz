@@ -26,11 +26,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./configs/base": "./dist/configs/base.js",
-    "./configs/typescript": "./dist/configs/typescript.js",
-    "./configs/react": "./dist/configs/react.js",
-    "./configs/vue": "./dist/configs/vue.js",
-    "./configs/next": "./dist/configs/next.js"
+    "./base": "./dist/configs/base.js",
+    "./typescript": "./dist/configs/typescript.js",
+    "./react": "./dist/configs/react.js",
+    "./vue": "./dist/configs/vue.js",
+    "./next": "./dist/configs/next.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
