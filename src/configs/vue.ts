@@ -6,12 +6,6 @@ const vueConfig = defineConfig([
     plugins: {
       vue
     }
-  },
-  {
-    extends: [
-      "airbnb",
-      "airbnb/hooks"
-    ]
   }
 ])
 
