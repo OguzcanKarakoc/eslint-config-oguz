@@ -1,17 +1,24 @@
 import base from "./configs/base.js"
 import nextConfig from "./configs/next.js"
 import reactConfig from "./configs/react.js"
+import { createTailwindcssConfig } from "./configs/tailwindcss.js"
+import type { TailwindcssOptions } from "./configs/tailwindcss.js"
 import vueConfig from "./configs/vue.js"
 import { hasDependency } from "./utils/detect.js"
 
 import type { Linter } from "eslint"
 
-export function createConfig(): Linter.Config[] {
+export interface ConfigOptions {
+  tailwindcss?: TailwindcssOptions;
+}
+
+export function createConfig(options: ConfigOptions = {}): Linter.Config[] {
   const configs: Linter.Config[] = base,
     hasReact = hasDependency("react"),
     hasNuxt = hasDependency("nuxt"),
     hasVue = hasDependency("vue"),
-    hasNext = hasDependency("next")
+    hasNext = hasDependency("next"),
+    hasTailwindcss = hasDependency("tailwindcss")
   
   if (hasNext) {
     configs.push(...nextConfig)
@@ -27,6 +34,10 @@ export function createConfig(): Linter.Config[] {
 
   if (hasVue && !hasNuxt) {
     configs.push(...vueConfig)
+  }
+
+  if (hasTailwindcss) {
+    configs.push(...createTailwindcssConfig(options.tailwindcss))
   }
 
   return configs
