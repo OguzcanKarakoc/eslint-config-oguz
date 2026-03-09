@@ -1,11 +1,13 @@
-import { base } from "./base.js"
-import type { Linter } from "eslint"
+import { defineConfig } from "eslint/config"
+import base from "./base.js"
 
-export const reactConfig: Linter.Config[] = [
+const reactConfig = defineConfig([
   base,
   {
     rules: {
       "react/react-in-jsx-scope": "off"
     }
   }
-]
+])
+
+export default reactConfig

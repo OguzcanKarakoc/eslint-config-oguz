@@ -1,17 +1,17 @@
-import { base } from "./configs/base.js"
-import { typescript } from "./configs/typescript.js"
-import { reactConfig } from "./configs/react.js"
-import { vueConfig } from "./configs/vue.js"
-import { nextConfig } from "./configs/next.js"
+import base from "./configs/base.js"
+import nextConfig from "./configs/next.js"
+import reactConfig from "./configs/react.js"
+import vueConfig from "./configs/vue.js"
 import { hasDependency } from "./utils/detect.js"
 
 import type { Linter } from "eslint"
 
 export function createConfig(): Linter.Config[] {
-  const configs: Linter.Config[] = [base, ...typescript]
-  const hasReact = hasDependency("react")
-  const hasVue = hasDependency("vue")
-  const hasNext = hasDependency("next")
+  const configs: Linter.Config[] = base,
+    hasReact = hasDependency("react"),
+    hasNuxt = hasDependency("nuxt"),
+    hasVue = hasDependency("vue"),
+    hasNext = hasDependency("next")
   
   if (hasNext) {
     configs.push(...nextConfig)
@@ -21,8 +21,12 @@ export function createConfig(): Linter.Config[] {
     configs.push(...reactConfig)
   }
 
-  if (hasVue) {
-    configs.push(vueConfig)
+  if (hasNuxt) {
+    // Configs.push(...nuxtConfig)
+  }
+
+  if (hasVue && !hasNuxt) {
+    configs.push(...vueConfig)
   }
 
   return configs

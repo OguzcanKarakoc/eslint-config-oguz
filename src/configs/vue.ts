@@ -1,8 +1,10 @@
 import vue from "eslint-plugin-vue"
-import type { Linter } from "eslint"
+import { defineConfig } from "eslint/config"
 
-export const vueConfig: Linter.Config = {
+const vueConfig = defineConfig({
   plugins: {
     vue
   }
-}
+})
+
+export default vueConfig

@@ -1,17 +1,18 @@
-import { globalIgnores } from "eslint/config";
-import { base } from "./base.js"
+import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
-import type { Linter } from "eslint"
+import base from "./base.js";
 
-export const nextConfig: Linter.Config[] = [
+const nextConfig= defineConfig([
   base,
-  ...nextVitals, 
-  ...nextTs,
+  nextVitals, 
+  nextTs,
   globalIgnores([
     ".next/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
   ]),
-]
+])
+
+export default nextConfig
