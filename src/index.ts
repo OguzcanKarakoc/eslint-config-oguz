@@ -1,5 +1,5 @@
 import base from "./configs/base.js"
-import nextConfig from "./configs/next.js"
+import { createNextConfig } from "./configs/next.js"
 import reactConfig from "./configs/react.js"
 import { createTailwindcssConfig, type TailwindcssOptions } from "./configs/tailwindcss.js"
 import vueConfig from "./configs/vue.js"
@@ -8,6 +8,8 @@ import { hasDependency } from "./utils/detect.js"
 import type { Linter } from "eslint"
 
 export interface ConfigOptions {
+  /** Enforce feature-based (vertical-slice) architecture boundaries across any framework. */
+  architecture?: "feature-based";
   tailwindcss?: TailwindcssOptions;
 }
 
@@ -20,7 +22,7 @@ export default function createConfig(options: ConfigOptions = {}): Linter.Config
     hasTailwindcss = hasDependency("tailwindcss")
   
   if (hasNext) {
-    configs.push(...nextConfig)
+    configs.push(...createNextConfig(options.architecture))
   }
 
   if (hasReact && !hasNext) {
@@ -38,6 +40,5 @@ export default function createConfig(options: ConfigOptions = {}): Linter.Config
   if (hasTailwindcss) {
     configs.push(...createTailwindcssConfig(options.tailwindcss))
   }
-
   return configs
 }
