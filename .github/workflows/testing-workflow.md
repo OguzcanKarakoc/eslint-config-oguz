@@ -21,6 +21,7 @@ tools:
 safe-outputs:
   create-agent-session:
   create-pull-request:
+    protected-files: fallback-to-issue
     allowed-files:
       - package.json
       - pnpm-lock.yaml
