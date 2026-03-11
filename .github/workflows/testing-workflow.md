@@ -18,13 +18,12 @@ tools:
   web-fetch:
   playwright:
   serena:
-protected-files:
-  allowed-files:
-    - package.json
-    - pnpm-lock.yaml
 safe-outputs:
   create-agent-session:
   create-pull-request:
+    allowed-files:
+      - package.json
+      - pnpm-lock.yaml
   create-code-scanning-alert:
   add-reviewer:
 ---
