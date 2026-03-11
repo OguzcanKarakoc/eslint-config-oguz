@@ -2,14 +2,15 @@
 on:
   workflow_dispatch:
 permissions:
-      contents: read
-      issues: read
-      pull-requests: read
+  contents: read
+  issues: read
+  pull-requests: read
 engine: copilot
 network:
   allowed:
     - defaults
     - node
+    - github
 tools:
   github:
     toolsets: [default]
